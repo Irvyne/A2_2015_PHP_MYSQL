@@ -42,3 +42,5 @@ $result = mysqli_query($link, $sql);
 var_dump($result);
 
 var_dump(mysqli_error($link));
+
+echo "https://github.com/Irvyne/A2_2015_PHP_MYSQL";
