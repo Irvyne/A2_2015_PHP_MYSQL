@@ -19,9 +19,13 @@ $result = mysqli_query($link, $sql);
 if (false === $result) {
     var_dump(mysqli_error($link));
 } else {
-    fputcsv($fp, ['id', 'name']);
-    while ($row = mysqli_fetch_assoc($result)) {
-        fputcsv($fp, $row);
+    $i = 0;
+    while ($article = mysqli_fetch_assoc($result)) {
+        if (0 === $i) {
+            fputcsv($fp, $article);
+            $i++;
+        }
+        fputcsv($fp, $article);
     }
 }
 
